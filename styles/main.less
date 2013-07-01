@@ -85,13 +85,15 @@
 
 // Pop title
 #pop-title {
-  width: 800px;
+  float: right;
+  width: 400px;
   margin: 0 auto;
-  padding: 15px 110px;
+  padding: 15px 110px 15px 0;
   text-align: center;
   .headline-font();
   font-size: 54px;
   line-height: 1.1;
+  text-align: right;
   p {
     .headline-font();
     font-size: 54px;
@@ -101,18 +103,18 @@
 
 .titleAndLogo{
     background: url("@{base-url}/images/title.png") repeat top left;
-    background-size:100% 100%;
     overflow: hidden;
-    margin:0;
+    margin:0 auto;
     padding:0;
     width:1020px;
     border-top:3px solid @three-column-region-bg;
 }
 
 #pop-logo{
-    width:800px;
+    float: left;
+    width:400px;
     margin:0 auto;
-    padding:15px 110px;
+    padding:15px 0 15px 110px;
     text-align: left;
 }   
 
@@ -171,6 +173,18 @@
 
 //All the Mixings Starts
 //Image BOX Effect
+.box-shadow(@shadow: 0 0 15px rgba(0,0,0,.75)) {
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+.myContent{
+  width:1020px;
+  margin:0 auto;
+  padding: 0;
+  overflow:hidden;
+  .box-shadow();
+}
 .boxImage(@width:200px,@height:180px,@padding:10px){
 .slideshow{
             position:relative;
