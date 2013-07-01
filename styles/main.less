@@ -86,7 +86,7 @@
 // Pop title
 #pop-title {
   width: 800px;
-  margin: 0px auto;
+  margin: 15px auto;
   padding:0 110px;
   text-align: center;
   .headline-font();
@@ -98,6 +98,21 @@
     line-height: 1.1;
   }
 }
+
+.titleAndLogo{
+    background: url("@{base-url}/images/title.png") repeat top left;
+    background-size:100% 100%;
+    overflow: hidden;
+    margin:0;
+    padding:25px 0px;
+    width:1020px;
+    border-top:3px solid @three-column-region-bg;
+}
+
+#pop-logo{
+    width:1020px;
+    margin:0 auto;
+}   
 
 // Columnizer rows & columns
 .columnizer-row {
@@ -291,12 +306,7 @@ img{
     font-size:24px;
 }
 //All the Mixings Ends
-#pop-logo{
-    width:1020px;
-    margin:0 auto;
-    background: url("@{base-url}/images/logoBg.png") no-repeat top left;
-    background-repeat:repeat-x;
-}
+
 #header-region{
     >div:first-child{
         background: @header-region-bg url("@{base-url}/images/headerBg.png") no-repeat top left;
