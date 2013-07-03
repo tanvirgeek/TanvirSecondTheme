@@ -107,7 +107,7 @@
     margin:0 auto;
     padding:0;
     width:1020px;
-    border-top:3px solid @three-column-region-bg;
+    border-top:5px solid @three-column-region-bg;
 }
 
 #pop-logo{
@@ -173,7 +173,7 @@
 
 //All the Mixings Starts
 //Image BOX Effect
-.box-shadow(@shadow: 0 0 15px rgba(0,0,0,.75)) {
+.box-shadow(@shadow: 0 0 15px rgba(0,0,0,.40)) {
   -webkit-box-shadow: @shadow;
   -moz-box-shadow: @shadow;
   box-shadow: @shadow;
@@ -213,7 +213,8 @@ img{
     bottom: 0;
     text-align: center;
     background-color: white;
-}
+    cursor: url("@{base-url}/images/magnifying_glass.png"), -moz-zoom-in;
+ }
 }
 //
 //Shadow Effects Function
@@ -301,17 +302,28 @@ img{
 .documentTitle{
     display: inline;
     position: relative;
-    top:40px;
+    top:30px;
     float: left;
     margin-left:12px;
+    line-height:17px;
+    letter-spacing:1px;
     color: white;
-    font-size:12px;
+    font-size:16px;
     max-width:250px;
+    text-align: left;
+    text-transform: capitalize;
+    span{
+        font-size:14px;
+        text-transform: lowercase;
+    }
 }
 .documents a{
     text-align:center;
     display: block;
     overflow: hidden;
+}
+.documents li{
+    margin-bottom: 20px;
 }
 
 //Asset-title Border Bottom
@@ -332,29 +344,42 @@ img{
         background: @header-region-bg;
     }
     .populr-image-slider{
-        .boxImage(800px,400px,6px);
         z-index: 2;
         background-color: white;
     }
-    .asset-title{
-       .assetTitle(#b7b7b7,#333333);
+    .asset-type-imagegroup .asset-title{
+       .assetTitle(#b7b7b7,#333333); 
        padding:0px 0px 18px;
        margin: 28px 0px 20px;
        text-align: left;
     }
+//rest asset title other than imagegroup
+    .asset-title{
+       .assetTitle(#b7b7b7,#333333); 
+       padding:0px 0px 18px;
+       margin: 0px 0px 20px;
+       text-align: left;
+    }
+    
     .description, .body, p, li {
-        font-size: 13px;
+        font-size: 14px;
         text-align: left;
         color:#333333;
+    }
+    .documentTitle{
+        color: #686866;
+        font-size:14px;
     }
 }
  
 #three-column{
+    padding-bottom:350px;
+    background:@three-column-region-bg;
     .columnizer-row{
         background:@three-column-region-bg;
     }
     .description, .body, p, li {
-        font-size: 13px;
+        font-size: 14px;
         text-align: left;
         color:#ffffff;
     }
@@ -367,7 +392,19 @@ img{
         padding:0px 0px 18px;
         margin: 28px 0px 20px;
     }
-    .asset-type-imagegroup.asset-size-3{
+    
+}
+
+
+
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+@media all and (min-width: 961px) {
+  #pop-title { font-size: 32px !important; }
+
+  .asset-title { font-size: 20px !important; }
+  .asset-type-imagegroup.asset-size-3{
             .populr-image-slider{
                 .boxImage(256px,150px,4px);
         
@@ -387,17 +424,15 @@ img{
         }
 }
 
-
-
-* html .clearfix             { zoom: 1; } /* IE6 */
-*:first-child+html .clearfix { zoom: 1; } /* IE7 */
-
 ///////////////////////////////////////////////////////
 /* MOBILE
 The Populr mobile reset will handle some of the basics of 
 mobilizing your theme, such as stacking all of the assets 
 vertically. However, you'll have to fine tune the styling 
 to make your theme look really good on mobile devices. */
+
+
+
 @media all and (max-width: 960px) {
   #populr > .mobile-reset();
 
@@ -405,11 +440,18 @@ to make your theme look really good on mobile devices. */
     width: auto !important;
     padding: 20px !important;
   }
+  .asset-type-imagegroup{
+            .populr-image-slider{
+                
+                .boxImage(700px,350px,5px);
+        
+            }
+  }
 
   .columnizer-row {
     width: auto !important;
-    margin: 20px auto !important;
-    padding: 0 20px !important;
+    margin: 0 auto !important;
+    padding: 20px 20px !important;
   }
 
   .asset-title {
@@ -427,5 +469,28 @@ to make your theme look really good on mobile devices. */
   #pop-title { font-size: 32px !important; }
 
   .asset-title { font-size: 20px !important; }
+  .asset-type-imagegroup{
+            .populr-image-slider{
+                
+                .boxImage(350px,200px,5px);
+        
+            }
+  }
 }
 
+@media screen and (max-width: 768px) and (min-width: 601px){
+  #pop-title { font-size: 32px !important; }
+
+  .asset-title { font-size: 20px !important; }
+  .shadowEffect{
+       width:410px!important; 
+  }
+  .asset-type-imagegroup{
+                        
+            .populr-image-slider{
+                
+                .boxImage(400px,230px,5px);
+        
+            }
+  }
+}
