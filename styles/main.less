@@ -187,7 +187,7 @@
 }
 .boxImage(@width:200px,@height:180px,@padding:10px){
 .slideshow{
-            position:relative;
+            position: relative;
             width:@width!important;
             height:@height!important;
             margin: auto;
@@ -254,7 +254,6 @@ img{
 //image Slider Shadow Effect
 .shadowEffect
 {
-  
   position: relative;
   margin:0 auto;
 }
@@ -401,9 +400,6 @@ img{
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
 @media all and (min-width: 961px) {
-  #pop-title { font-size: 32px !important; }
-
-  .asset-title { font-size: 20px !important; }
   .asset-type-imagegroup.asset-size-3{
             .populr-image-slider{
                 .boxImage(256px,150px,4px);
@@ -429,7 +425,7 @@ img{
 The Populr mobile reset will handle some of the basics of 
 mobilizing your theme, such as stacking all of the assets 
 vertically. However, you'll have to fine tune the styling 
-to make your theme look really good on mobile devices. */
+to make your theme Look really good on mobile devices. */
 
 
 
@@ -440,6 +436,11 @@ to make your theme look really good on mobile devices. */
     width: auto !important;
     padding: 20px !important;
   }
+  
+  .shadowEffect{
+       width:710px!important; 
+  }
+  
   .asset-type-imagegroup{
             .populr-image-slider{
                 
@@ -451,7 +452,7 @@ to make your theme look really good on mobile devices. */
   .columnizer-row {
     width: auto !important;
     margin: 0 auto !important;
-    padding: 20px 20px !important;
+    padding: 20px!important;
   }
 
   .asset-title {
@@ -466,9 +467,10 @@ to make your theme look really good on mobile devices. */
 }
 
 @media screen and (max-width: 600px) {
-  #pop-title { font-size: 32px !important; }
-
-  .asset-title { font-size: 20px !important; }
+  .shadowEffect{
+       width:360px!important; 
+  }
+   
   .asset-type-imagegroup{
             .populr-image-slider{
                 
@@ -479,9 +481,6 @@ to make your theme look really good on mobile devices. */
 }
 
 @media screen and (max-width: 768px) and (min-width: 601px){
-  #pop-title { font-size: 32px !important; }
-
-  .asset-title { font-size: 20px !important; }
   .shadowEffect{
        width:410px!important; 
   }
