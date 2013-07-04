@@ -85,10 +85,11 @@
 
 // Pop title
 #pop-title {
+  color: #686866;
   float: right;
   width: 400px;
   margin: 0 auto;
-  padding: 30px 110px 15px 0;
+  padding: 35px 110px 15px 0;
   text-align: center;
   .headline-font();
   font-size: 54px;
@@ -213,7 +214,7 @@ img{
     bottom: 0;
     text-align: center;
     background-color: white;
-    cursor: url("@{base-url}/images/magnifying_glass.png"), -moz-zoom-in;
+    cursor: url("@{base-url}/images/magnifying_glass.png"), -moz-zoom-in !important;
  }
 }
 //
@@ -352,7 +353,7 @@ img{
        margin: 28px 0px 20px;
        text-align: left;
     }
-//rest asset title other than imagegroup
+//rest asset titles other than imagegroup
     .asset-title{
        .assetTitle(#b7b7b7,#333333); 
        padding:0px 0px 18px;
@@ -430,9 +431,8 @@ to make your theme Look really good on mobile devices. */
 
 
 @media all and (max-width: 960px) {
-  
  #populr > .mobile-reset();
-  .titleAndLogo{
+  .titleAndLogo,.myContent{
     width: auto!important;
     margin:0!important;
     padding:0!important;
@@ -476,13 +476,13 @@ to make your theme Look really good on mobile devices. */
 
 @media screen and (max-width: 600px) {
   .shadowEffect{
-       width:360px!important; 
+       width:510px!important; 
   }
    
   .asset-type-imagegroup{
             .populr-image-slider{
                 
-                .boxImage(350px,200px,5px);
+                .boxImage(500px,260px,5px);
         
             }
   }
@@ -490,13 +490,13 @@ to make your theme Look really good on mobile devices. */
 
 @media screen and (max-width: 768px) and (min-width: 601px){
   .shadowEffect{
-       width:410px!important; 
+       width:650px!important; 
   }
   .asset-type-imagegroup{
                         
             .populr-image-slider{
                 
-                .boxImage(400px,230px,5px);
+                .boxImage(650px,360px,5px);
         
             }
   }
