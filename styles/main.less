@@ -269,15 +269,17 @@ img{
 //
 //Video Shadow Effect
 .asset-type-embedgroup{
-     .content{
-       position: relative;
+     position:relative;
+     z-index:2;
+    .embed{
        background-color: white;
        padding:6px;
-       z-index:2;
+       margin-bottom:10px!important;
+       
     }
     .shadowEffect:before,.shadowEffect:after
     {
-        .effect(1);
+        .effect(-1);
     }
     .shadowEffect:after
     {
