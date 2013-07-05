@@ -187,6 +187,11 @@
   .box-shadow();
 }
 .boxImage(@width:200px,@height:180px,@padding:10px){
+position: relative;
+            width:@width!important;
+            height:@height!important;
+            margin: auto;
+            overflow: hidden !important;
 
 .slideshow,.fancybox,.slide{
             position: relative;
@@ -194,23 +199,24 @@
             height:@height!important;
             margin: auto;
             overflow: hidden !important;
+            img{
+                position: absolute;
+                width:@width - (2*@padding + 2px)!important;
+                height:@height - (2*@padding + 2px)!important;
+                padding:@padding!important;
+                background-color: white;
+                margin: auto;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                text-align: center;
+                background-color: white;
+                cursor: url("@{base-url}/images/magnifying_glass.png"), -moz-zoom-in !important;
+            }
           }
 
-img{
-    position: absolute;
-    width:@width - (2*@padding + 2px)!important;
-    height:@height - (2*@padding + 2px)!important;
-    padding:@padding!important;
-    background-color: white;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    background-color: white;
-    cursor: url("@{base-url}/images/magnifying_glass.png"), -moz-zoom-in !important;
- }
+
 }
 //
 //Shadow Effects Function
@@ -432,6 +438,15 @@ to make your theme Look really good on mobile devices. */
 
 @media all and (max-width: 960px) {
  #populr > .mobile-reset();
+ #pop img:not(.populr-mobile-noresize) {
+    -moz-box-sizing: border-box;
+    width: 690px !important;
+    height: 340px !important;
+}
+#pop .populr-image-slider {
+    width:700px !important;
+    height:350px;
+}
   .titleAndLogo,.myContent{
     width: auto!important;
     margin:0!important;
@@ -453,6 +468,7 @@ to make your theme Look really good on mobile devices. */
             .populr-image-slider{
                 
                 .boxImage(700px,350px,5px);
+                
         
             }
   }
@@ -478,17 +494,35 @@ to make your theme Look really good on mobile devices. */
   .shadowEffect{
        width:510px!important; 
   }
-   
+   #pop img:not(.populr-mobile-noresize) {
+    -moz-box-sizing: border-box;
+    width: 490px !important;
+    height: 250px !important;
+}
+  #pop .populr-image-slider {
+    width:500px !important;
+    height:260px !important;
+}
   .asset-type-imagegroup{
             .populr-image-slider{
                 
                 .boxImage(500px,260px,5px);
-        
+                
             }
   }
 }
 
 @media screen and (max-width: 768px) and (min-width: 601px){
+
+  #pop img:not(.populr-mobile-noresize) {
+    -moz-box-sizing: border-box;
+    width: 640px !important;
+    height: 350px !important;
+}
+#pop .populr-image-slider {
+    width:650px !important;
+    height:360px !important;
+}
   .shadowEffect{
        width:660px!important; 
   }
@@ -497,7 +531,7 @@ to make your theme Look really good on mobile devices. */
             .populr-image-slider{
                 
                 .boxImage(650px,360px,5px);
-        
+                
             }
   }
 }
