@@ -47,273 +47,252 @@
   <!-- Put your theme's HTML inside this script tag. The script tag will 
        prevent issues with quote escaping and invalid markup. -->
   <script id="theme" type="text/x-handlebars-template">
-    <div class="myContent">
+    
     <div class="titleAndLogo">
         {{logo}}
-
         {{{title}}}
     </div>
     
-    {{#region "columnizer" id="header-region" max_cols="1" max_auto_assets="0" dummy_content="I-2|T-1|E-2|D-1|V-1"}}
 
-           
-             {{#asset "text" size="1"}}
-            
-                    {{{title}}}
-                    {{{body}}}
-              
-             {{/asset}}
-           
-          {{#asset "imagegroup" size="1"}}
-                <div class="shadowEffect">
-                    {{{imageslider images width="940" height="450"}}}
-                </div>
-                {{{title}}}
-                {{{description}}}
-          {{/asset}}
-          
-          {{#asset "documentgroup" size="1"}}
-          
-                {{{title}}}
-                  
-                  <ul class="documents">
-                    {{#documents}}
-                        <li>
-                            <a href="{{original_url}}">
-                                <div class="containerToCenterize">
-                                    <div class="fileImg"></div>
-                                    <div class="documentTitle">
-                                        {{title}}</br>
-                                        <span>{{{source_file_name}}}</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    {{/documents}}
-                   </ul>
-                {{{description}}}
-          
-          {{/asset}}
-          
-            {{#asset "embedgroup" size="1" width="960"}}
-          
-                {{#embeds}}
-                            <div class="shadowEffect">
-                                <div class="embed">{{{html}}}</div>
-                            </div>
-                {{/embeds}}
-                {{{title}}}
-                {{{description}}}
-            
-            {{/asset}}
-          
-          
-          
-          {{#asset "videogroup" size="1"}}
-              
-            <div class="shadowEffect">
-                {{{videoplayer videos width="400" height="300" resolution="medium"}}}
-            </div>   
-                {{{title}}}
-                {{{description}}}
-                
-                
-              
-          {{/asset}}
-          
-        {{/region}}
-        
+    {{#region "columnizer" id="header-region" max_cols="3" max_auto_assets="0" dummy_content="T-1|T-1,T-1|T-1,T-1,T-1|I-1|I-2|I-1,I-2|I-1,I-2,I-3|D-1|D-3|D-1,D-3|D-1,D-2,D-3|E-1|E-2|E-1,E-2|E-1,E-2,E-3"}}
 
-        {{#region "columnizer" id="three-column" max_cols="3" max_auto_assets="0" dummy_content="V-1,T-1|V-2,I-1,D-2|I-1,I-1|T-2,T-2,T-2|T-2,T-2|T-2|E-2,E-2|E-2|D-2,D-2,D-2|D-2"}}
+      {{#asset "text" size="1"}}
+        {{{title}}}
+        {{{body}}}
+      {{/asset}}
 
+      {{#asset "text" size="2"}}
+        {{{title}}}
+        {{{body}}}
+      {{/asset}}
 
-                {{#asset "text" size="2"}}
-                  {{{title}}}
-                  {{{body}}}
-                {{/asset}}
+      {{#asset "text" size="3"}}
+        {{{title}}}
+        {{{body}}}
+      {{/asset}}
 
-                {{#asset "text" size="1"}}
-                  {{{title}}}
-                  {{{body}}}
-                {{/asset}}
+      {{#asset "imagegroup" size="1"}}
+        <div class="content">
+          {{{imageslider images width="684" height="356"}}}
+        </div>
+        {{{title}}}
+        {{{description}}}
+      {{/asset}}
+ 
+      {{#asset "imagegroup" size="2"}}
+        <div class="content">
+          {{{imageslider images width="324" height="187"}}}
+        </div>
+        {{{title}}}
+        {{{description}}}
+      {{/asset}}
+  
+      {{#asset "imagegroup" size="3"}}
+        <div class="content">
+          {{{imageslider images width="204" height="128"}}}
+        </div>
+        {{{title}}}
+        {{{description}}}
+      {{/asset}}
+  
+      {{#asset "documentgroup" size="1"}}
+        {{{title}}}
+        {{{description}}}
+        <ul class="documents">
+          {{#documents}}
+            <li>
+              <a href="{{{original_url}}}"><div class="extension extension-{{{extension}}}" /><div class="document-info"><span class="document-title">{{{title}}}</span>
+                <br><span class="src-file-name">{{{source_file_name}}}</span>
+              </div></a>
+            </li>
+          {{/documents}}
+        </ul>
+      {{/asset}}
+ 
+      {{#asset "documentgroup" size="2"}}
+        {{{title}}}
+        {{{description}}}
+        <ul class="documents">
+          {{#documents}}
+            <li>
+              <a href="{{{original_url}}}"><div class="extension extension-{{{extension}}}" /><div class="document-info"><span class="document-title">{{{title}}}</span></div></a>
+            </li>
+          {{/documents}}
+        </ul>
+      {{/asset}}
+ 
+      {{#asset "documentgroup" size="3"}}
+        {{{title}}}
+        {{{description}}}
+        <ul class="documents">
+          {{#documents}}
+            <li>
+              <a href="{{{original_url}}}"><div class="extension extension-{{{extension}}}" /><div class="document-info"><span class="document-title">{{{title}}}</span></div></a>
+            </li>
+          {{/documents}}
+        </ul>
+      {{/asset}}
+ 
+      {{#asset "embedgroup" size="1" width="700"}}
+        {{#embeds}}
+          {{#if_equal kind "video"}}
+            <div class="content"><div class="embed">{{{html}}}</div></div>
+          {{else}}
+            <div class="embed">{{{html}}}</div>
+          {{/if_equal}}
+        {{/embeds}}
+        {{{title}}}
+        {{{description}}}
+      {{/asset}}
 
-                {{#asset "text" size="3"}}
-                  {{{title}}}
-                  {{{body}}}
-                {{/asset}}
+      {{#asset "embedgroup" size="2" width="340"}}
+        {{#embeds}}
+          {{#if_equal kind "video"}}
+            <div class="content"><div class="embed">{{{html}}}</div></div>
+          {{else}}
+            <div class="embed">{{{html}}}</div>
+          {{/if_equal}}
+        {{/embeds}}
+        {{{title}}}
+        {{{description}}}
+      {{/asset}}
 
-                
+      {{#asset "embedgroup" size="3" width="220"}}
+        {{#embeds}}
+          {{#if_equal kind "video"}}
+            <div class="content"><div class="embed">{{{html}}}</div></div>
+          {{else}}
+            <div class="embed">{{{html}}}</div>
+          {{/if_equal}}
+        {{/embeds}}
+        {{{title}}}
+        {{{description}}}
+      {{/asset}}
 
-                {{#asset "imagegroup" size="1"}}
+    {{/region}}
 
-                    <div class="shadowEffect">
-                      {{{imageslider images width="940" height="450"}}}
-                    </div>
+    <div id="three-column">
 
-                  {{{title}}}
-                  {{{description}}}
-                {{/asset}}
+      {{#region "columnizer" id="footer-region" max_cols="3" max_auto_assets="1" dummy_content="T-1|T-1,T-1|T-1,T-1,T-1|I-1|I-2|I-1,I-2|I-1,I-2,I-3|D-1|D-3|D-1,D-3|D-1,D-2,D-3|E-1|E-2|E-1,E-2|E-1,E-2,E-3"}}
 
-                {{#asset "imagegroup" size="2"}}
-                    <div class="shadowEffect">
-                       {{{imageslider images width="440" height="353"}}}
-                    </div>
+        {{#asset "text" size="1"}}
+          {{{title}}}
+          {{{body}}}
+        {{/asset}}
 
-                  {{{title}}}
-                  {{{description}}}
-                {{/asset}}
+        {{#asset "text" size="2"}}
+          {{{title}}}
+          {{{body}}}
+        {{/asset}}
 
-                {{#asset "imagegroup" size="3"}}
-                    <div class="shadowEffect">
-                          {{{imageslider images width="280" height="230"}}}
-                    </div>
-                  {{{title}}}
-                  {{{description}}}
-                {{/asset}}
+        {{#asset "text" size="3"}}
+          {{{title}}}
+          {{{body}}}
+        {{/asset}}
 
-                
+        {{#asset "imagegroup" size="1"}}
+          <div class="content">
+            {{{imageslider images width="684" height="356"}}}
+          </div>
+          {{{title}}}
+          {{{description}}}
+        {{/asset}}
+   
+        {{#asset "imagegroup" size="2"}}
+          <div class="content">
+            {{{imageslider images width="324" height="187"}}}
+          </div>
+          {{{title}}}
+          {{{description}}}
+        {{/asset}}
+    
+        {{#asset "imagegroup" size="3"}}
+          <div class="content">
+            {{{imageslider images width="204" height="128"}}}
+          </div>
+          {{{title}}}
+          {{{description}}}
+        {{/asset}}
+    
+        {{#asset "documentgroup" size="1"}}
+          {{{title}}}
+          {{{description}}}
+          <ul class="documents">
+            {{#documents}}
+              <li>
+                <a href="{{{original_url}}}"><div class="extension extension-{{{extension}}}" /><div class="document-info"><span class="document-title">{{{title}}}</span></div></a>
+              </li>
+            {{/documents}}
+          </ul>
+        {{/asset}}
+   
+        {{#asset "documentgroup" size="2"}}
+          {{{title}}}
+          {{{description}}}
+          <ul class="documents">
+            {{#documents}}
+              <li>
+                <a href="{{{original_url}}}"><div class="extension extension-{{{extension}}}" /><div class="document-info"><span class="document-title">{{{title}}}</span></div></a>
+              </li>
+            {{/documents}}
+          </ul>
+        {{/asset}}
+   
+        {{#asset "documentgroup" size="3"}}
+          {{{title}}}
+          {{{description}}}
+          <ul class="documents">
+            {{#documents}}
+              <li>
+                <a href="{{{original_url}}}"><div class="extension extension-{{{extension}}}" /><div class="document-info"><span class="document-title">{{{title}}}</span></div></a>
+              </li>
+            {{/documents}}
+          </ul>
+        {{/asset}}
+   
+        {{#asset "embedgroup" size="1" width="700"}}
+          {{#embeds}}
+            {{#if_equal kind "video"}}
+              <div class="content"><div class="embed">{{{html}}}</div></div>
+            {{else}}
+              <div class="embed">{{{html}}}</div>
+            {{/if_equal}}
+          {{/embeds}}
+          {{{title}}}
+          {{{description}}}
+        {{/asset}}
 
-                {{#asset "documentgroup" size="1"}}
-                  {{{title}}}
-                  
-                  <ul class="documents">
-                    {{#documents}}
-                        <li>
-                            <a href="{{original_url}}">
-                                <div class="containerToCenterize">
-                                    <div class="fileImg"></div>
-                                    <div class="documentTitle">
-                                        {{title}}</br>
-                                        {{{source_file_name}}}
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    {{/documents}}
-                   </ul>
-                  {{{description}}}
-                {{/asset}}
+        {{#asset "embedgroup" size="2" width="340"}}
+          {{#embeds}}
+            {{#if_equal kind "video"}}
+              <div class="content"><div class="embed">{{{html}}}</div></div>
+            {{else}}
+              <div class="embed">{{{html}}}</div>
+            {{/if_equal}}
+          {{/embeds}}
+          {{{title}}}
+          {{{description}}}
+        {{/asset}}
 
-                {{#asset "documentgroup" size="2"}}
-                  {{{title}}}
-                  
-                    <ul class="documents">
-                      {{#documents}}
-                        <li>
-                            <a href="{{original_url}}">
-                                <div class="containerToCenterize">
-                                    <div class="fileImg"></div>
-                                    <div class="documentTitle">
-                                        {{title}}</br>
-                                        <span>{{{source_file_name}}}</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    {{/documents}}
-                    </ul>
-                  {{{description}}}
-                {{/asset}}
+        {{#asset "embedgroup" size="3" width="220"}}
+          {{#embeds}}
+            {{#if_equal kind "video"}}
+              <div class="content"><div class="embed">{{{html}}}</div></div>
+            {{else}}
+              <div class="embed">{{{html}}}</div>
+            {{/if_equal}}
+          {{/embeds}}
+          {{{title}}}
+          {{{description}}}
+        {{/asset}}
 
-                {{#asset "documentgroup" size="3"}}
-                  {{{title}}}
-                  
-                  <ul class="documents">
-                  {{#documents}}
-                        <li>
-                            <a href="{{original_url}}">
-                                <div class="containerToCenterize">
-                                    <div class="fileImg"></div>
-                                    <div class="documentTitle">{{title}}</br>
-                                        <span>{{{source_file_name}}}</span>
-                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                    {{/documents}}
-                  </ul>
-                  {{{description}}}
-                {{/asset}}
+      {{/region}}
 
-                
+      {{sharing}}
 
-                {{#asset "embedgroup" size="1" width="960"}}
-                  
-                   
-                        {{#embeds}}
-                            <div class="shadowEffect">
-                                <div class="embed">{{{html}}}</div>
-                            </div>
-                        {{/embeds}}
-                    
-                  
-                  {{{title}}}
-                  {{{description}}}
-                {{/asset}}
+      {{pop_links}}
 
-                {{#asset "embedgroup" size="2" width="470"}}
-                  
-                  
-                   
-                        {{#embeds}}
-                            <div class="shadowEffect">
-                                <div class="embed">{{{html}}}</div>
-                            </div>
-                        {{/embeds}}
-                    
-                  
-                  {{{title}}}
-                  {{{description}}}
-                {{/asset}}
-
-                {{#asset "embedgroup" size="3" width="307"}}
-                  
-                  
-                    {{#embeds}}
-                            <div class="shadowEffect">
-                                <div class="embed">{{{html}}}</div>
-                            </div>
-                    {{/embeds}}
-                  
-                  {{{title}}}
-                  {{{description}}}
-                {{/asset}}
-
-                
-
-                {{#asset "videogroup" size="1"}}
-                  <div class="shadowEffect">
-                    {{{videoplayer videos width="960" height="720" resolution="medium"}}}
-                  </div>
-                  {{{title}}}
-                  {{{description}}}
-                {{/asset}}
-
-                {{#asset "videogroup" size="2"}}
-                  <div class="shadowEffect">
-                   {{{videoplayer videos width="470" height="353" resolution="medium"}}}
-                  </div>
-                  {{{title}}}
-                  {{{description}}}
-                {{/asset}}
-
-                {{#asset "videogroup" size="3"}}
-                <div class="shadowEffect">
-                  {{{videoplayer videos width="307" height="230" resolution="medium"}}}
-                </div>  
-                  {{{title}}}
-                  {{{description}}}
-                {{/asset}}
-
-                
-            
-            
-        {{/region}}
-        
-    {{sharing}}
-
-    {{pop_links}}
-    </div>
+    <!-- Footer wrapper end --></div>
 
   </script>
 </body>
